@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Toy List</h1>
+
+<!-- you get two variables in the list page (index page) -->
+
+<!-- <model_name>_list 
+object_list -->
+
+<!-- toy_list 
+object_list -->
+
+{% for toy in toy_list %}
+  <a href="{% url 'toys_detail' toy.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ toy.name }}</span>
+            <p>Color: {{ toy.color }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}
